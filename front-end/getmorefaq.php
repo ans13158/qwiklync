@@ -9,7 +9,7 @@ $q = $_GET['q'];
 
 $servername = "localhost";
 $username = "root";
-$password = "";
+$password = "ans";
 $dbname = "quicklync";
 
 // Create connection
