@@ -4,12 +4,13 @@ require_once "connection.php" ;
 
 if( !(isset( $_POST['jobTitle'] ) && isset( $_POST['jobLocation'] ) && isset( $_POST['jobCategory'] ) &&isset( $_POST['jobSubCategory'] ) && isset( $_POST['jobType'] ) && isset( $_POST['jobShift'] ) && isset( $_POST['jobVacancy'] ) && isset( $_POST['jobExperience'] ) && isset( $_POST['jobSalary'] ) && isset( $_POST['jobLastDate'] ) && isset( $_POST['jobKind'] ) && isset( $_POST['jobTags'] ) && isset( $_POST['jobDesc'] ) && isset( $_POST['jobSpecs'] ) && isset( $_POST['jobTechGuide'] ) ) )  {							
 
-		header('Location:post-job.php') ;
+		header('Location:company-details.php') ;
 	
 	}
 				
 else				
 	{
+					$jobCompany = strip_tags( trim($_POST['companyId']) );
 					$jobTitle = strip_tags( trim($_POST['jobTitle']) );
 					$jobLocation = strip_tags( trim($_POST['jobLocation']) );
 					$jobCategory = strip_tags( trim($_POST['jobCategory']) ) ;
@@ -28,19 +29,20 @@ else
 
 					$jobPostDate = date("Y/m/d") ;
 
-					$companyId = 8 ;
+					
 
-					$insertQuery = "INSERT INTO `job`(`companyId`, `title`, `location`, `category`, `subCategory`, `type`, `shift`, `vacancy`, `experience`,`salary`, `postedOn`, `lastDate`, `kind`, `tags`, `description`, `specification`, `techGuidance`) VALUES ('$companyId', '$jobTitle', '$jobLocation', '$jobCategory', '$jobSubCategory', '$jobType', '$jobShift', '$jobVacancy', '$jobExperience','$jobSalary', '$jobPostDate', '$jobLastDate', '$jobKind', '$jobTags', '$jobDesc', '$jobSpecs', '$jobTechGuide') " ;
+					$insertQuery = "INSERT INTO `job`(`companyId`, `title`, `location`, `category`, `subCategory`, `type`, `shift`, `vacancy`, `experience`,`salary`, `postedOn`, `lastDate`, `kind`, `tags`, `description`, `specification`, `techGuidance`) VALUES ('$jobCompany', '$jobTitle', '$jobLocation', '$jobCategory', '$jobSubCategory', '$jobType', '$jobShift', '$jobVacancy', '$jobExperience','$jobSalary', '$jobPostDate', '$jobLastDate', '$jobKind', '$jobTags', '$jobDesc', '$jobSpecs', '$jobTechGuide') " ;
 
 				
 
 			$insertResult = $conn->query($insertQuery) ;
-			$lastId = mysqli_insert_id($conn);
+			$lastId = $conn->insert_id;
 			if($insertResult)  {  
 				header('Location:single-job.php?jobId='.$lastId);
 				}	
 			else
-				die("sorry".mysql_error()) ;
+				
+				header('Location:post-job.php?companyId='.$jobCompany . '&error=Error in posting your job. Please try again.');
 
 		}
 

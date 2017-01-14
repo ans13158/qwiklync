@@ -10,8 +10,13 @@
                 <div class="row">
                     <div class="col-md-7 hidden-sm hidden-xs">
                         <div class="header-top-left header-top-info">
-                            <p><a href="tel:+3211234567"><i class="fa fa-phone"></i>+91-966-384-6761</a></p>
-                            <p><a href="mailto:contact@scriptsbundle.com"><i class="fa fa-envelope"></i>connect@qwiklync.com</a></p>
+                        <ul class="menu-logo">
+                        <li>
+                            <a href="index.php"> <img src="images/logo.png" alt="logo" class="img-responsive" style="height: 39px;width:206px;float: left"> </a>
+                        </li>
+                    </ul>
+                            <p style="float:right;"><a href="tel:+3211234567"><i class="fa fa-phone"></i>+91-966-384-6761</a></p>
+                            <p style="float:right;"><a href="mailto:contact@scriptsbundle.com"><i class="fa fa-envelope"></i>connect@qwiklync.com</a></p>
                         </div>
                     </div>
                     
@@ -21,17 +26,19 @@
         <nav id="menu-1" class="mega-menu fa-change-black" data-color="" >
             <section class="menu-list-items container-fluid" style="background-color: #29aafe" >
                 <div class="container" >
-                    <ul class="menu-logo">
+                   <!-- <ul class="menu-logo">
                         <li>
                             <a href="index.php"> <img src="images/logo.png" alt="logo" class="img-responsive"> </a>
                         </li>
-                    </ul>
+                    </ul>-->
                     <ul class="menu-links pull-right"  >
                         <li> <a href="index.php"> HOME </a>
                         </li>
                         <li> <a href="all-company.php"> ALL  COMPANIES </a>
                         </li>
-                        <li> <a href="about.php"> ABOUT US </a>
+						<li> <a href="all-categories.php"> ALL  Jobs </a>
+                        </li>
+                        <li> <a href="blog.php"> Blog </a>
                         </li>
                         <li> <a href="contactus.php"> CONTACT US </a>
                         </li>

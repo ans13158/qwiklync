@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 08, 2017 at 12:42 AM
+-- Generation Time: Jan 14, 2017 at 09:34 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -23,13 +23,65 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `admin`
+--
+
+CREATE TABLE IF NOT EXISTS `admin` (
+  `adminId` int(20) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL,
+  `salt` varchar(100) NOT NULL,
+  `firstName` varchar(50) NOT NULL,
+  `lastName` varchar(50) NOT NULL,
+  `photoPath` varchar(200) NOT NULL,
+  `photoName` varchar(100) NOT NULL,
+  PRIMARY KEY (`adminId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`adminId`, `email`, `password`, `salt`, `firstName`, `lastName`, `photoPath`, `photoName`) VALUES
+(5, 'yash@gmail.com', 'yash', 'b6dd4f3a45e1093044a705c29256bd77', 'Yashasvi', 'Goel', '../admin/adminPhoto/yash@gmail.com12239922_1649085892036104_259517798774449078_n.jpg5873b81fc269d', '12239922_1649085892036104_259517798774449078_n.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `blog`
+--
+
+CREATE TABLE IF NOT EXISTS `blog` (
+  `blogId` int(20) NOT NULL AUTO_INCREMENT,
+  `title` varchar(500) NOT NULL,
+  `content` varchar(6000) NOT NULL,
+  `mainPoint` varchar(1000) NOT NULL,
+  `photoName` varchar(100) NOT NULL,
+  `photoPath` varchar(250) NOT NULL,
+  `date` varchar(50) NOT NULL,
+  `category` varchar(100) NOT NULL,
+  PRIMARY KEY (`blogId`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `blog`
+--
+
+INSERT INTO `blog` (`blogId`, `title`, `content`, `mainPoint`, `photoName`, `photoPath`, `date`, `category`) VALUES
+(7, 'asdf', 'sdfgh', 'asdfg', 'img6.png', '../admin/blogImages/img6.png587395b929e47', '2017-January-09', 'dfghj');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `blogcomment`
 --
 
 CREATE TABLE IF NOT EXISTS `blogcomment` (
   `commentId` int(20) NOT NULL AUTO_INCREMENT,
   `blogId` int(20) NOT NULL,
-  `commentDesc` varchar(2000) NOT NULL,
+  `userId` int(20) NOT NULL,
+  `content` varchar(2000) NOT NULL,
+  `date` varchar(50) NOT NULL,
   PRIMARY KEY (`commentId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -43,7 +95,9 @@ CREATE TABLE IF NOT EXISTS `blogreply` (
   `replyId` int(20) NOT NULL AUTO_INCREMENT,
   `commentId` int(20) NOT NULL,
   `blogId` int(20) NOT NULL,
-  `replyDesc` varchar(2000) NOT NULL,
+  `userId` int(20) NOT NULL,
+  `content` varchar(2000) NOT NULL,
+  `date` varchar(50) NOT NULL,
   PRIMARY KEY (`replyId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -56,28 +110,71 @@ CREATE TABLE IF NOT EXISTS `blogreply` (
 CREATE TABLE IF NOT EXISTS `company` (
   `companyId` int(50) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) NOT NULL,
+  `industryType` varchar(200) NOT NULL,
+  `companySize` varchar(50) NOT NULL,
+  `type` varchar(50) NOT NULL,
+  `website` varchar(100) NOT NULL,
+  `founded` varchar(50) NOT NULL,
+  `address` varchar(250) NOT NULL,
   `email` varchar(100) NOT NULL,
   `phone` bigint(10) NOT NULL,
-  `website` varchar(100) NOT NULL,
-  `address` varchar(250) NOT NULL,
   `logoPath` varchar(150) NOT NULL,
   `logoName` varchar(100) NOT NULL,
-  `latitude` float NOT NULL,
-  `longitude` float NOT NULL,
-  `rating` float NOT NULL,
+  `about` varchar(10000) NOT NULL,
+  `specialities` varchar(5000) NOT NULL,
   PRIMARY KEY (`companyId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=16 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=55 ;
 
 --
 -- Dumping data for table `company`
 --
 
-INSERT INTO `company` (`companyId`, `name`, `email`, `phone`, `website`, `address`, `logoPath`, `logoName`, `latitude`, `longitude`, `rating`) VALUES
-(1, 'Anshul', 'ans@ans.com', 1212121212, 'asddssads', 'basdnbjdbuh', 'companies', 'comp-logo.png', 46.61, 21.21, 4),
-(2, 'Agrawal', 'ans@sad.com', 55555, 'adsdadsds', 'dsadsadsa', 'companies', 'comp-logo.png', 10.3, 10.3, 5),
-(3, 'Abhijeet', 'assd@df.cp', 4545454, 'adbdncn', 'ddncjd', 'companies', 'comp-logo.png', 22, 22, 2),
-(4, 'Pandey', 'asdd@dasds.cd', 50050, 'asddsad', 'dsaasddw', 'companies', 'comp-logo.png', 20, 20, 2),
-(15, 'agrawal', 'san@dsa.c', 55555, 'asdaads', 'dsjn', 'companies', 'comp-logo.png', 2.22, 22.2, 2);
+INSERT INTO `company` (`companyId`, `name`, `industryType`, `companySize`, `type`, `website`, `founded`, `address`, `email`, `phone`, `logoPath`, `logoName`, `about`, `specialities`) VALUES
+(1, 'Anshul', '', '', '', 'asddssads', '', 'basdnbjdbuh', 'ans@ans.com', 1212121212, 'companies', 'comp-logo.png', '', ''),
+(2, 'Agrawal', '', '', '', 'adsdadsds', '', 'dsadsadsa', 'ans@sad.com', 55555, 'companies', 'comp-logo.png', '', ''),
+(3, 'Abhijeet', '', '', '', 'adbdncn', '', 'ddncjd', 'assd@df.cp', 4545454, 'companies', 'comp-logo.png', '', ''),
+(4, 'Pandey', '', '', '', 'asddsad', '', 'dsaasddw', 'asdd@dasds.cd', 50050, 'companies', 'comp-logo.png', '', ''),
+(8, 'adsnasbk', 'computer & IT', '55', 'Govenrment', 'addnas', '544', 'dasdsadsadsa', 'sadsda@dwsa.c', 4646, 'companies', 'comp-logo.png', 'adsdsaddsdsdsa', 'djahkjsahdkjhajd'),
+(15, 'agrawal', '', '', '', 'asdaads', '', 'dsjn', 'san@dsa.c', 55555, 'companies', 'comp-logo.png', '', ''),
+(16, 'da', '', '22', 'Government Organisation', 'asdds', '111', 'address', 'das@s.c', 111, '', '', '<p>dads</p>\r\n', 'speciality'),
+(17, 'da', '', '22', 'Government Organisation', 'asdds', '111', 'address', 'das@s.c', 111, '', '', '<p>dads</p>\r\n', 'speciality'),
+(18, 'sdf', '', '2', 'Government Organisation', 'dfd', '22', 'address', 'ff@s.c', 0, '', '', '', 'speciality'),
+(19, 'gffgc', 'Transporation', '22', 'Government Organisation', 'dsd', '32', 'address', 's2@zs.b', 111, '', '', '<p>vbbvsdfghkj</p>\r\n', '<p>srdxfgtck</p>\r\n'),
+(20, 'gffgc', 'Transporation', '22', 'Government Organisation', 'dsd', '32', 'address', 's2@zs.b', 111, '', '', '<p>vbbvsdfghkj</p>\r\n', '<p>srdxfgtck</p>\r\n'),
+(21, 'gffgc', 'Transporation', '22', 'Government Organisation', 'dsd', '32', 'address', 's2@zs.b', 111, '', '', '<p>vbbvsdfghkj</p>\r\n', '<p>srdxfgtck</p>\r\n'),
+(22, 'gffgc', 'Transporation', '22', 'Government Organisation', 'dsd', '32', 'address', 's2@zs.b', 111, '', '', '<p>vbbvsdfghkj</p>\r\n', '<p>srdxfgtck</p>\r\n'),
+(23, 'hgjkj', 'Transporation', '33', 'Government Organisation', '22rdxfgc', '24356', 'address', 'dtfyguh@szxdfcg.c', 0, '', '', '<p>jhbknml</p>\r\n', '<p>rdtfyghbjk</p>\r\n'),
+(24, 'hgjkj', 'Transporation', '33', 'Government Organisation', '22rdxfgc', '24356', 'address', 'dtfyguh@szxdfcg.c', 0, '', '', '<p>jhbknml</p>\r\n', '<p>rdtfyghbjk</p>\r\n'),
+(25, 'hgjkj', 'Transporation', '33', 'Government Organisation', '22rdxfgc', '24356', 'address', 'dtfyguh@szxdfcg.c', 0, '', '', '<p>jhbknml</p>\r\n', '<p>rdtfyghbjk</p>\r\n'),
+(26, 'hgjkj', 'Transporation', '33', 'Government Organisation', '22rdxfgc', '24356', 'address', 'dtfyguh@szxdfcg.c', 0, '', '', '<p>jhbknml</p>\r\n', '<p>rdtfyghbjk</p>\r\n'),
+(27, 'hgjkj', 'Transporation', '33', 'Government Organisation', '22rdxfgc', '24356', 'address', 'dtfyguh@szxdfcg.c', 0, '', '', '<p>jhbknml</p>\r\n', '<p>rdtfyghbjk</p>\r\n'),
+(28, 'hgjkj', 'Transporation', '33', 'Government Organisation', '22rdxfgc', '24356', 'address', 'dtfyguh@szxdfcg.c', 0, '', '', '<p>jhbknml</p>\r\n', '<p>rdtfyghbjk</p>\r\n'),
+(29, 'sdgfh', 'Transporation', '345', 'Government Organisation', 'dfghjbk', 'qw32456q', 'address', 'tfg@sdxfc.b', 2435, '', '', '<p>vbn</p>\r\n', '<p>fdxgcv</p>\r\n'),
+(30, 'ans', 'Transporation', '5', 'Government Organisation', 'asdsda', '555', 'address', 'add@s.c', 4554, '', '', 'sfdsdf', 'addsad                                        '),
+(31, 'ans', 'Transporation', '5', 'Government Organisation', 'asdsda', '555', 'address', 'add@s.c', 4554, '', '', 'sfdsdf', 'addsad                                        '),
+(32, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(33, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(34, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(35, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(36, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(37, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(38, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(39, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(40, 'anshu;l', 'Transporation', '45', 'Government Organisation', 'sjasbj', '1212', 'address', 'ans@s.c', 65454, '0', '', 'fdsdsf', 'dasdsa                                           \r\n                                        '),
+(41, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '0', '', 'dffsd', 'adss                                           \r\n                                        '),
+(42, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(43, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(44, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '/qwiklync/front-end/images/company-logo/', '/qwiklync/front-end/images/company-logo/44Gautam Industries', 'dffsd', 'adss                                           \r\n                                        '),
+(45, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(46, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(47, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(48, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(49, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
+(50, 'ans', 'Transporation', '55', 'Government Organisation', 'dasd', '45', 'address', '5454@d.c', 0, '', '', 'adds', 'sasdsda                                           \r\n                                        '),
+(51, 'ans', 'Transporation', '55', 'Government Organisation', 'http://www.dasd.com', '45', 'address', '5454@d.c', 4554, 'companies/', '14.jpg', 'adds', 'sasdsda                                           \r\n                                        '),
+(52, 'ans', 'Transporation', '55', 'Government Organisation', 'dasd', '45', 'address', '5454@d.c', 4554, 'companies', 'comp-logo.png', 'adds', 'sasdsda                                           \r\n                                        '),
+(53, 'anshul agrawal', 'Transporation', '55', 'Government Organisation', 'http://www.dasd.com', '2112', '$ address', 'da2@d.c', 1111, '', '', '<p>I am&nbsp;<strong>Graphic Designer.</strong>&nbsp;Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in repreh.<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proident.</p>\r\n\r\n<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh.&nbsp;<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proiden</p>\r\n', '<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh. Excepteur sint occaecat cupidatat non proident.Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh. Excepteur sint occaecat cupidatat non proident.</p>\r\n'),
+(54, 'adsnamn', 'Transporation', '11', 'Government Organisation', 'hhtp://www.adsda.com', '2121', 'adhkjhajdhajdhk', 'as@s.s', 21212, 'companies', '14.jpg', '<p>I am&nbsp;<strong>Graphic Designer.</strong>&nbsp;Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in repreh.<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proident.</p>\r\n\r\n<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh.&nbsp;<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proident.</p>\r\n', '<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh. Excepteur sint occaecat cupidatat non proident.</p>\r\n');
 
 -- --------------------------------------------------------
 
@@ -93,7 +190,20 @@ CREATE TABLE IF NOT EXISTS `contactus` (
   `subject` varchar(300) NOT NULL,
   `message` varchar(4500) NOT NULL,
   PRIMARY KEY (`contactId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `contactus`
+--
+
+INSERT INTO `contactus` (`contactId`, `name`, `email`, `phone`, `subject`, `message`) VALUES
+(1, 'yashasvi goel', 'yashgoel@gmail.com', 76543234, 'asdfghk', 'xcvbn,mnbvcsdfgjhgedfghhgf'),
+(2, 'aman', 'yash@gmail.com', 1234, 'azxc', 'zxcv'),
+(3, 'ans', 'ans@ans.co', 544, '', ''),
+(4, 'ans', 'ans@ans.co', 544, '', ''),
+(5, 'ans', 'ans@ans.co', 544, '', ''),
+(6, 'ans', 'ans@ans.co', 544, '', ''),
+(7, 'ans', 'ans@ans.co', 544, '', '');
 
 -- --------------------------------------------------------
 
@@ -106,7 +216,23 @@ CREATE TABLE IF NOT EXISTS `faq` (
   `question` varchar(500) NOT NULL,
   `answer` varchar(3500) NOT NULL,
   PRIMARY KEY (`faqId`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`faqId`, `question`, `answer`) VALUES
+(1, 'ek aur ques', 'uska answer'),
+(2, 'fir ques', 'uska bhi answer'),
+(3, 'tesra quest', 'tesra ans'),
+(4, 'chotha quest', 'chotha ans'),
+(5, 'panchwa ques', 'panchwa ans'),
+(6, 'six ques', 'six  ans'),
+(7, 'satwa ques', 'satwa ans'),
+(8, 'aathwa ques', 'aathwa ans'),
+(9, 'ninth ques', 'ninth ans'),
+(10, 'ninth ques', 'ninth ans');
 
 -- --------------------------------------------------------
 
@@ -125,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `shift` varchar(20) NOT NULL,
   `vacancy` varchar(4) NOT NULL,
   `experience` varchar(100) NOT NULL,
-  `salary` varchar(8) NOT NULL,
+  `salary` varchar(30) NOT NULL,
   `postedOn` date NOT NULL,
   `lastDate` date NOT NULL,
   `kind` varchar(30) NOT NULL,
@@ -134,7 +260,7 @@ CREATE TABLE IF NOT EXISTS `job` (
   `specification` varchar(1000) NOT NULL,
   `techGuidance` varchar(1000) NOT NULL,
   PRIMARY KEY (`jobId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Dumping data for table `job`
@@ -151,7 +277,13 @@ INSERT INTO `job` (`jobId`, `companyId`, `title`, `location`, `category`, `subCa
 (9, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (10, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '122', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (11, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '11', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
-(12, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Hot Job', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n');
+(12, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Hot Job', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
+(13, 8, 'adsjdlahdljah', 'jlsadhjdlsaj', 'Restaurant, Food, Hotels', 'ABSN SA,M', 'Full Time', 'Morning', '11', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-04', 'Featured Job', 'software,laravel,html', 'dsdsa', 'adssdads', 'dasdadsa'),
+(14, 8, 'adsjdlahdljah', 'jlsadhjdlsaj', 'Restaurant, Food, Hotels', 'ABSN SA,M', 'Full Time', 'Morning', '11', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-04', 'Featured Job', 'software,laravel,html', 'dsdsa', 'adssdads', 'dasdadsa'),
+(15, 52, 'dsaljdsal', 'alnds', 'Art, Design & Multimedia', 'adsads', 'Full Time', 'Morning', '44', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-12', 'Featured Job', 'software,laravel,html', 'adsdsa', 'sad', 'fddsfsdf'),
+(16, 52, 'dsbanndsab', 'nbasndbnb', 'Restaurant, Food, Hotels', 'dsasdna', 'Full Time', 'Morning', '55', 'Fresher', 'â‚¹40,000 +', '2017-01-14', '2017-01-05', 'Featured Job', 'software,laravel,html', 'adsdas', 'ds', 'dasasdsda'),
+(17, 52, 'kjadhalj', 'jkdj', 'Art, Design & Multimedia', 'lkadsjlkad', 'Full Time', 'Morning', '22', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-06', 'Featured Job', 'software,laravel,html', 'sdadsds', 'sadsa', 'dssd'),
+(18, 53, 'adsdssada', 'asdasdxa', 'Healthcare & Medicine', 'asdad', 'Full Time', 'Morning', '22', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-09', 'Featured Job', 'software,laravel,html', '<p>sdsadandjkasndkj</p>', '<p>asdsdasd</p>', '<p>dsadasd</p>');
 
 -- --------------------------------------------------------
 
@@ -185,21 +317,30 @@ INSERT INTO `jobapply` (`jobApplyId`, `name`, `email`, `type`, `resumePath`, `re
 
 CREATE TABLE IF NOT EXISTS `user` (
   `userId` int(20) NOT NULL AUTO_INCREMENT,
+  `type` varchar(15) NOT NULL,
   `username` varchar(100) NOT NULL,
   `emailId` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
   `salt` varchar(100) NOT NULL,
   `verifyId` varchar(100) NOT NULL,
   `status` int(1) NOT NULL,
+  `profilePhotoPath` varchar(500) NOT NULL,
+  `profilePhotoName` varchar(100) NOT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`userId`, `username`, `emailId`, `password`, `salt`, `verifyId`, `status`) VALUES
-(1, 'Yashasvi', 'yash@gmail.com', 'yash', 'ebf1d1111f29aca2a2e55fb8ab2c776b', '', 2);
+INSERT INTO `user` (`userId`, `type`, `username`, `emailId`, `password`, `salt`, `verifyId`, `status`, `profilePhotoPath`, `profilePhotoName`) VALUES
+(4, '', 'Yashasvi', 'yash@gmail.com', 'yash', 'b6dd4f3a45e1093044a705c29256bd77', '24c653b3fc1f81ca8dba35d31b0347a2', 2, '', ''),
+(5, '', 'Yash', 'yashasvigoel006@gmail.com', 'yash', '4a9347d83b01b846686683bc5f9c12de', 'e3a06d0af53634dc600aa061a7174dac', 2, '', ''),
+(6, 'jobSeeker', 'anshul', 'anshul@gmail.com', 'anshul', '3d6d87ce77ea6f8356f7b708381355d2', '8d3a3d9c35a526c91a4ebc38df9ffdcd', 2, '', ''),
+(7, 'company', 'ans', 'ans@ssa.c', 'ans', 'd7229a03f569f89e505875e4454edb23', '232afb54d49511ecbe313fd9c6d80b33', 2, '', ''),
+(8, 'company', 'ans', 'ans@ss.c', 'ans', '272b23f14db1516d141ae2d016841887', '48e314ca9913441a9464558fd5fdb84f', 2, '', ''),
+(9, 'company', 'ans', 'ans@s.c', 'ans', '76f87e3b9ee762bcc4506603ee677c0d', '5ac7d11ffb21f3eaad34dd2ff31a6d8f', 2, '', ''),
+(10, 'jobSeeker', 'ans', 'ans@s.cs', 'ans', '476ff2ca07c8a4e9bd30b2d23434cc1d', 'f80ca2c96d181775dab7765625a897fd', 2, '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
