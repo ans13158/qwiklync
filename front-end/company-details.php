@@ -6,7 +6,7 @@ require_once "connection.php";
     $success = "";
 
     if( isset($_GET['error']) ) 
-        $error = $_GET['error'];
+        $error = $_GET['error']; 
 
     if( isset($_GET['success']) ) 
         $success = $_GET['success'];
@@ -41,48 +41,51 @@ require_once "connection.php";
             $about = $_POST['aboutCompany'];
             $speciality = $_POST['companySpeciality'];
             
-            $insertQuery = "INSERT INTO `company`(`name`,`industryType`,`companySize`,`type`,`website`,`founded`,`address`,`email`,`phone`,`about`,`specialities`) VALUES ('$name','$type', '$size','$kind', '$website', '$founded', '$address','$email','$phone','$about','$speciality') ";
-            $insertResult = $conn->query($insertQuery);
 
-            if(!$insertResult) {
-                $error = "Error executing insert query".$conn->error  ;
-                
-            }
-            else {
-                $companyId = $conn->insert_id ;
-            }
+            $uniq=uniqid();
 
 
             
             $logo= $_FILES['logo']['tmp_name'];
-            $logoName= $_FILES['logo']['name'];
             $logoType= $_FILES['logo']['type'];
-            $curdir = dirname($_SERVER['PHP_SELF']) ;
-            $logoPath = $curdir . "/images/company-logo/" ;
-            $photoStore = $companyId . $name ;
-            $photoVariable = $logoPath . $photoStore ;
+            $logoName= $_FILES['logo']['name'];
+            $photoFolderName= $logoName.$uniq;
+            $path="companies/".$photoFolderName;
+            $photoPath= $path;
+            $photoVariable= $path."/".$logoName;
+            
+            
+            
+            if(substr($logoType,0,5)=="image") 
+            {
+                
+                if(mkdir($path,0777,true))
+                {
+                    
+                $insertQuery = "INSERT INTO `company`(`name`,`industryType`,`companySize`,`type`,`website`,`founded`,`address`,`email`,`phone`,`about`,`specialities`) VALUES ('$name','$type', '$size','$kind', '$website', '$founded', '$address','$email','$phone','$about','$speciality') ";
+                $insertResult = $conn->query($insertQuery);
 
-
-           /* if( (substr($logoType,0,5)=="image") ) 
-               {   
-                if(move_uploaded_file($logo, $photoVariable))
-                  {    
-                    $insertLogo = "UPDATE `company` SET `logoPath` = '$logoPath',`logoName` = '$logoName' WHERE `companyId` = '$companyId' " ;
-                    $insertLogoRes = $conn->query($insertLogo);
-                    if(!$insertLogoRes)  {
-                        $error = "Error saving your uploaded image. Please try again.".$conn->error;
-                    }
-                }    
+                if(!$insertResult) {
+                    $error = "Error executing insert query".$conn->error  ;    
+                }
+                move_uploaded_file($logo,$photoVariable);
+                    
+                    
+                }
+                else
+                {
+                    $error = "Unable to create directory! Please Try Again.";
+                }
+            }
+            else
+            {
+                $error = "Addition of Company is failed! Please try again.Only images allowed";
+            }    
         }
 
-        else  {
-                $error = "Only images are allowed for logo.Please upload an image.";
-        }*/
+        
 
-        if($error == "")  {
-        header('Location:post-job.php?companyId='.$companyId);
-        }
-}
+
 
 
     
@@ -214,8 +217,8 @@ require_once "connection.php";
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="form-group">
                                         <label>Company's Logo * </label>
-                                         <input type="file" name="logo" class="form-control" required="required">
-                                            
+                                         
+                                         <input type="file" name="logo" id="logo" class="form-control" required="required">   
                                     </div>
                                 </div>
                                 

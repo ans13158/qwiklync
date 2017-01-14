@@ -53,7 +53,7 @@ include 'connection.php';
 			$photoName= $_FILES['photo']['name'];
 			$category=$_POST['category'];
 			$date=date("Y-F-d");
-			$uniq=uniqid();
+			$uniq=uniqid(); 
 			
 			$photoFolderName= $photoName.$uniq;
 			$path="../admin/blogImages/".$photoFolderName;
