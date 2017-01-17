@@ -28,9 +28,13 @@
     $companyName = $selectDisplay['name'];
     $companyType = $selectDisplay['industryType'];
     $companyKind = $selectDisplay['type'];
+    $companySize = $selectDisplay['companySize'];
+    
+    $companyFounded = $selectDisplay['founded']; 
     $companySite = $selectDisplay['website'];
     $companyAddress = $selectDisplay['address'];
     $companyMail = $selectDisplay['email'];
+    $companyPhone = $selectDisplay['phone'];
     $companyLogoPath = $selectDisplay['logoPath'];
     $companyLogoName = $selectDisplay['logoName'];
     $companyAbout = $selectDisplay['about'];
@@ -69,13 +73,23 @@
         <section class="resume2 resume7">
             <div class="container">
                  <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
-                        <div class="col-md-3 col-sm-5 col-xs-12">
-                            <div class="profile-photo"><img src="<?php echo $companyLogoVariable;?>" alt="" class="img-responsive"></div>
+                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding" >
+                        <div class="col-md-4 col-sm-4 col-xs-12" >
+                        </div>
+
+                        <div class="col-md-4 col-sm-4 col-xs-12" >
+                        
+                            <div class="profile-photo"><img src="<?php echo $companyLogoVariable;?>" alt="" class="img-responsive" style="height: auto;width: auto"></div>
+                        </div>    
                             
                         </div>
+                        
+                    
+
+                    <div class="col-md-12 col-sm-12 col-xs-12 nopadding">
                         <div class="col-md-9 col-sm-7 col-xs-12">
                             <div class="profile-info">
+                            <br><br>
                                 <h1 class="profile-title"><?php echo $companyName;?></h1>
                                 <h2 class="profile-position"><?php echo $companyType;?> Industry</h2></div>
                             <ul class="profile-list">
@@ -83,9 +97,25 @@
                                     <strong class="title">Company Type:</strong>
                                     <span class="cont"><?php echo $companyKind;?></span>
                                 </li>
+
+
+                                <li class="">
+                                    <strong class="title">Company Size:</strong>
+                                    <span class="cont"><?php echo $companySize; ?></span>
+                                </li>
+
+                                <li class="">
+                                    <strong class="title">Company Kind:</strong>
+                                    <span class="cont"><?php echo $companyKind; ?></span>
+                                </li>
                                 <li class="">
                                     <strong class="title">Company Website:</strong>
                                     <span class="cont"><a href="<?php echo $companySite;?>" ><?php echo $companySite; ?></a></span>
+                                </li>
+
+                                <li class="">
+                                    <strong class="title">Founded in Year:</strong>
+                                    <span class="cont"><?php echo $companyFounded; ?></span>
                                 </li>
                               <li class="">
                                     <strong class="title">E-mail:</strong>
@@ -95,6 +125,12 @@
                                     <strong class="title">Address:</strong>
                                     <span class="cont"><?php echo $companyAddress; ?>  </span>
                                 </li>
+
+                                <li class="">
+                                    <strong class="title">Company's Contact No.:</strong>
+                                    <span class="cont"><?php echo $companyPhone; ?></span>
+                                </li>
+
                             </ul>    
                             <!--<h4><strong> About Me:</strong></h4>
 

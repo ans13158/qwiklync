@@ -1,4 +1,4 @@
-<?php 
+ <?php 
 	ob_start();
 	$current_file= $_SERVER['SCRIPT_NAME'];
 	//Starting Session
@@ -147,7 +147,7 @@
 
                                     
                         ?>
-                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-6 col-sm-6 col-xs-12">
                                     <div class="blog-post">
                                         <div class="post-img">
                                             <a href="fullBlog.php?blogId=<?php echo $id;?>&category=<?php echo $category;?>">
@@ -164,9 +164,18 @@
                                     <?php echo $title;?>
                                 </a>
                             </h3>
+                                        <a href="fullBlog.php?blogId=<?php echo $id;?>&category=<?php echo $category;?>">
                                         <p class="post-excerpt">
-                                            <?php echo $content;?>
+                                        <?php  
+                                        $i = 0; 
+                                        $shortCont = ""; 
+                                    for($i=0;$i<10;$i++)  
+                                              $shortCont = $shortCont . $content[$i];
+                                          echo $shortCont;
+                                         ?>     .....Read More
+
                                         </p>
+                                        </a>
                                     </div>
                                 </div>
                                 <?php

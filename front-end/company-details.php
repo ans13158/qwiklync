@@ -144,15 +144,15 @@ require_once "connection.php";
                                         <select class="questions-category form-control" name="companyType" required="required">
                                             <option value="Transporation">Transporation</option>
                                             <option value="Restaurant, Food, Hotels">Restaurant, Food, Hotels</option>
-                                            <option value="Art, Design & Multimedia">Art, Design & Multimedia</option>
-                                            <option value="Healthcare & Medicine">Healthcare & Medicine</option>
+                                            <option value="Art, Design and Multimedia">Art, Design & Multimedia</option>
+                                            <option value="Healthcare and Medicine">Healthcare & Medicine</option>
                                             <option value="Laravel">Laravel</option>
                                             <option value="Sofware">Sofware</option>
-                                            <option value="Computer & IT">Computer & IT</option>
-                                            <option value="Accounting & Finance">Accounting & Finance</option>
+                                            <option value="Computer and IT">Computer & IT</option>
+                                            <option value="Accounting and Finance">Accounting & Finance</option>
                                             <option value="Education & Academia">Education & Academia</option>
                                             <option value="Construction, Engineering">Construction, Engineering</option>
-                                            <option value="Software & Development">Software & Development</option>
+                                            <option value="Software and Development">Software & Development</option>
                                         </select>
                                     </div>
                                 </div>
