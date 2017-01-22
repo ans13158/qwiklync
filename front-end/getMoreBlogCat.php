@@ -1,6 +1,6 @@
-
-
 <?php
+session_start();
+
 $id="";
     require_once "connection.php";
 $category = $_GET['category'];    

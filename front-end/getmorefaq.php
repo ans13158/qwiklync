@@ -5,6 +5,8 @@
 <body>
 
 <?php
+session_start();
+
 $q = $_GET['q'];
 $id = $_GET['id'];
 

@@ -1,4 +1,12 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['userId']) && !isset($_SESSION['userType']) && !isset($_SESSION['username']) )
+    header("Location:login.php?error=You must be loggedin to add company's details ");
+
+else
+    if ($_SESSION['userType'] != 'Company')  
+        header("Location:index.php");  
 
 require_once "connection.php";
 

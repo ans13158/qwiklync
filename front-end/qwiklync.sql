@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Jan 15, 2017 at 04:16 PM
+-- Generation Time: Jan 20, 2017 at 10:17 PM
 -- Server version: 5.5.53-0ubuntu0.14.04.1
 -- PHP Version: 5.5.9-1ubuntu4.20
 
@@ -88,14 +88,23 @@ CREATE TABLE IF NOT EXISTS `blogcomment` (
   `content` varchar(2000) NOT NULL,
   `date` varchar(50) NOT NULL,
   PRIMARY KEY (`commentId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
 
 --
 -- Dumping data for table `blogcomment`
 --
 
 INSERT INTO `blogcomment` (`commentId`, `blogId`, `userId`, `content`, `date`) VALUES
-(1, 8, 1, 'adbskjandkjnk', '01-02-2017');
+(1, 8, 1, 'adbskjandkjnk', '01-02-2017'),
+(2, 7, 4, 'asddssd', '2017-January-19'),
+(3, 7, 4, '', '2017-January-19'),
+(4, 7, 4, '', '2017-January-19'),
+(5, 7, 4, 'anshul', '2017-January-19'),
+(6, 7, 4, 'dsanas,dsnc', '2017-January-19'),
+(7, 7, 4, 'dsanas,dsnc', '2017-January-19'),
+(8, 7, 4, 'dsanas,dsnc', '2017-January-19'),
+(9, 7, 4, 'dsanas,dsnc', '2017-January-19'),
+(10, 7, 4, 'dsanas,dsnc', '2017-January-19');
 
 -- --------------------------------------------------------
 
@@ -191,7 +200,7 @@ INSERT INTO `company` (`companyId`, `name`, `industryType`, `companySize`, `type
 (49, 'Gautam Industries', 'Transporation', '55', 'Government Organisation', 'sASA', '1222', 'address', 'aS@a.x', 21212, '', '', 'dffsd', 'adss                                           \r\n                                        '),
 (50, 'ans', 'Transporation', '55', 'Government Organisation', 'dasd', '45', 'address', '5454@d.c', 0, '', '', 'adds', 'sasdsda                                           \r\n                                        '),
 (51, 'ans', 'Transporation', '55', 'Government Organisation', 'http://www.dasd.com', '45', 'address', '5454@d.c', 4554, 'companies/', '14.jpg', 'adds', 'sasdsda                                           \r\n                                        '),
-(52, 'ans', 'Transporation', '55', 'Government Organisation', 'dasd', '45', 'address', '5454@d.c', 4554, 'companies', 'comp-logo.png', 'adds', 'sasdsda                                           \r\n                                        '),
+(52, 'anshul Agraw', 'Transporation', '4', 'Government Organisation', 'dasd', '45', 'address', '5454@d.com', 4554, 'companies', 'comp-logo.png', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.</p>\r\n'),
 (53, 'anshul agrawal', 'Transporation', '55', 'Government Organisation', 'http://www.dasd.com', '2112', '$ address', 'da2@d.c', 1111, 'companies', 'comp-logo.png', '<p>I am&nbsp;<strong>Graphic Designer.</strong>&nbsp;Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in repreh.<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proident.</p>\r\n\r\n<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh.&nbsp;<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proiden</p>\r\n', '<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh. Excepteur sint occaecat cupidatat non proident.Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh. Excepteur sint occaecat cupidatat non proident.</p>\r\n'),
 (54, 'adsnamn', 'Transporation', '11', 'Government Organisation', 'hhtp://www.adsda.com', '2121', 'adhkjhajdhajdhk', 'as@s.s', 21212, 'companies', '14.jpg', '<p>I am&nbsp;<strong>Graphic Designer.</strong>&nbsp;Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris. Duis aute irure dolor in repreh.<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proident.</p>\r\n\r\n<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh.&nbsp;<strong>Excepteur sint occaecat</strong>&nbsp;cupidatat non proident.</p>\r\n', '<p>Lesed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in repreh. Excepteur sint occaecat cupidatat non proident.</p>\r\n');
 
@@ -223,6 +232,23 @@ INSERT INTO `contactus` (`contactId`, `name`, `email`, `phone`, `subject`, `mess
 (5, 'ans', 'ans@ans.co', 544, '', ''),
 (6, 'ans', 'ans@ans.co', 544, '', ''),
 (7, 'ans', 'ans@ans.co', 544, '', '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `expereince`
+--
+
+CREATE TABLE IF NOT EXISTS `expereince` (
+  `srno` int(10) NOT NULL AUTO_INCREMENT,
+  `resumeid` int(11) NOT NULL,
+  `companyname` varchar(30) NOT NULL,
+  `post` varchar(30) NOT NULL,
+  `fromdate` int(11) NOT NULL,
+  `todate` int(11) NOT NULL,
+  `description` varchar(300) NOT NULL,
+  PRIMARY KEY (`srno`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -286,12 +312,12 @@ CREATE TABLE IF NOT EXISTS `job` (
 --
 
 INSERT INTO `job` (`jobId`, `companyId`, `title`, `location`, `category`, `subCategory`, `type`, `shift`, `vacancy`, `experience`, `salary`, `postedOn`, `lastDate`, `kind`, `tags`, `description`, `specification`, `techGuidance`) VALUES
-(2, 1, 'Looking for web developer', 'haldwani, india', 'Computer & IT', 'Web developer', 'Full Time', 'Featured Job', '5', 'Fresher', '2000', '0000-00-00', '2017-01-20', 'Featured Job', 'software,laravel,it', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities.</p>\r\n\r\n<p>2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n', '<p>1).you should be capable of executing all related merchandising activities of the given orders or the customers.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n'),
-(3, 1, 'Looking for web developer', 'haldwani, india', 'Computer & IT', 'Web developer', 'Full Time', 'Featured Job', '5', 'Fresher', '2000', '0000-00-00', '2017-01-20', 'Featured Job', 'software,laravel,it', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities.</p>\r\n\r\n<p>2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n', '<p>1).you should be capable of executing all related merchandising activities of the given orders or the customers.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n'),
-(4, 1, 'Looking for web developer', 'haldwani, india', 'Computer & IT', 'Web developer', 'Full Time', 'Featured Job', '5', 'Fresher', '1000', '2017-01-06', '2017-01-20', 'Full time', 'software,laravel,it', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities.</p>\r\n\r\n<p>2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n', '<p>1).you should be capable of executing all related merchandising activities of the given orders or the customers.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n'),
+(2, 1, 'Looking for web developer', 'haldwani, india', 'Computer and IT', 'Web developer', 'Full Time', 'Featured Job', '5', 'Fresher', '2000', '0000-00-00', '2017-01-20', 'Featured Job', 'software,laravel,it', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities.</p>\r\n\r\n<p>2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n', '<p>1).you should be capable of executing all related merchandising activities of the given orders or the customers.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n'),
+(3, 1, 'Looking for web developer', 'haldwani, india', 'Computer and IT', 'Web developer', 'Full Time', 'Featured Job', '5', 'Fresher', '2000', '0000-00-00', '2017-01-20', 'Featured Job', 'software,laravel,it', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities.</p>\r\n\r\n<p>2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n', '<p>1).you should be capable of executing all related merchandising activities of the given orders or the customers.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n'),
+(4, 1, 'Looking for web developer', 'haldwani, india', 'Computer and IT', 'Web developer', 'Full Time', 'Featured Job', '5', 'Fresher', '1000', '2017-01-06', '2017-01-20', 'Full time', 'software,laravel,it', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities.</p>\r\n\r\n<p>2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n', '<p>1).you should be capable of executing all related merchandising activities of the given orders or the customers.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).Part of the duties is to prepare the samples and the budget and both of them are for approval.<br />\r\n4).Constant update and interaction with the supplies is needed.<br />\r\n5).You should also make sure that the functions of all related processes are running smoothly.</p>\r\n'),
 (5, 1, 'Looking for android developer', 'Pantnagar,india', 'Laravel', 'android developer', 'Full Time', 'Morning', '10', 'Fresher', '11', '2017-01-06', '2017-01-26', 'Featured Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (6, 2, 'Looking for android developer', 'Pantnagar,india', 'Laravel', 'android developer', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
-(7, 3, 'Looking for android developer', 'Pantnagar,india', 'Computer & IT', 'Programming', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Featured Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
+(7, 3, 'Looking for android developer', 'Pantnagar,india', 'Computer and IT', 'Programming', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Featured Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (8, 3, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '10000', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (9, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (10, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '122', '2017-01-06', '2017-01-26', 'Hot Job', 'software,laravel,html', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
@@ -299,10 +325,10 @@ INSERT INTO `job` (`jobId`, `companyId`, `title`, `location`, `category`, `subCa
 (12, 4, 'Looking for android developer', 'Pantnagar,india', 'Construction, Engineering', 'civil engineering', 'Full Time', 'Morning', '10', 'Fresher', '22', '2017-01-06', '2017-01-26', 'Hot Job', '', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Lorem ipsum dolor sit amet.</p>\r\n', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n&nbsp;</p>\r\n', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.<br />\r\n4).<br />\r\n5).</p>\r\n'),
 (13, 8, 'adsjdlahdljah', 'jlsadhjdlsaj', 'Restaurant, Food, Hotels', 'ABSN SA,M', 'Full Time', 'Morning', '11', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-04', 'Featured Job', 'software,laravel,html', 'dsdsa', 'adssdads', 'dasdadsa'),
 (14, 8, 'adsjdlahdljah', 'jlsadhjdlsaj', 'Restaurant, Food, Hotels', 'ABSN SA,M', 'Full Time', 'Morning', '11', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-04', 'Featured Job', 'software,laravel,html', 'dsdsa', 'adssdads', 'dasdadsa'),
-(15, 52, 'dsaljdsal', 'alnds', 'Art, Design & Multimedia', 'adsads', 'Full Time', 'Morning', '44', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-12', 'Featured Job', 'software,laravel,html', 'adsdsa', 'sad', 'fddsfsdf'),
-(16, 52, 'dsbanndsab', 'nbasndbnb', 'Restaurant, Food, Hotels', 'dsasdna', 'Full Time', 'Morning', '55', 'Fresher', 'â‚¹40,000 +', '2017-01-14', '2017-01-05', 'Featured Job', 'software,laravel,html', 'adsdas', 'ds', 'dasasdsda'),
-(17, 52, 'kjadhalj', 'jkdj', 'Art, Design & Multimedia', 'lkadsjlkad', 'Full Time', 'Morning', '22', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-06', 'Featured Job', 'software,laravel,html', 'sdadsds', 'sadsa', 'dssd'),
-(18, 53, 'adsdssada', 'asdasdxa', 'Healthcare & Medicine', 'asdad', 'Full Time', 'Morning', '22', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-09', 'Featured Job', 'software,laravel,html', '<p>sdsadandjkasndkj</p>', '<p>asdsdasd</p>', '<p>dsadasd</p>');
+(15, 52, 'Looking for Android developer', 'alnds', 'Transporation', 'adsads', 'Full Time', 'Morning', '44', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-12', 'Featured Job', 'software,laravel', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.</p>', '<p>1).You should be able to handle it with care and professionally.<br />\r\n2).You should be able to handle it with care and professionally.<br />\r\n3).You should be able to handle it with care and professionally.</p>', '<p>Selected Employees would do the following work:<br />\r\n1).Being a garment merchandiser, you should be capable of executing all related merchandising activities<br />\r\n2).You should be able to handle it with care and professionally.</p>'),
+(16, 52, 'dsbanndsab', 'nbasndbnb', 'Restaurant, Food, Hotels', 'dsasdna', 'Full Time', 'Morning', '55', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-05', 'Featured Job', 'software,laravel,html', 'adsdas', 'ds', 'dasasdsda'),
+(17, 52, 'kjadhalj', 'jkdj', 'Art, Design and Multimedia', 'lkadsjlkad', 'Full Time', 'Morning', '22', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-06', 'Featured Job', 'software,laravel,html', 'sdadsds', 'sadsa', 'dssd'),
+(18, 53, 'adsdssada', 'asdasdxa', 'Healthcare and Medicine', 'asdad', 'Full Time', 'Morning', '22', 'Fresher', 'â‚¹10,000 or Less', '2017-01-14', '2017-01-09', 'Featured Job', 'software,laravel,html', '<p>sdsadandjkasndkj</p>', '<p>asdsdasd</p>', '<p>dsadasd</p>');
 
 -- --------------------------------------------------------
 
@@ -312,6 +338,7 @@ INSERT INTO `job` (`jobId`, `companyId`, `title`, `location`, `category`, `subCa
 
 CREATE TABLE IF NOT EXISTS `jobapply` (
   `jobApplyId` int(20) NOT NULL AUTO_INCREMENT,
+  `jobId` int(5) NOT NULL,
   `name` varchar(150) NOT NULL,
   `email` varchar(100) NOT NULL,
   `type` varchar(100) NOT NULL,
@@ -325,8 +352,8 @@ CREATE TABLE IF NOT EXISTS `jobapply` (
 -- Dumping data for table `jobapply`
 --
 
-INSERT INTO `jobapply` (`jobApplyId`, `name`, `email`, `type`, `resumePath`, `resumeName`, `coverLetter`) VALUES
-(1, 'Anshul', 'ans@ans.com', 'ans', 'company/resume', 'resume', 'dajdkdkcdlsmncs');
+INSERT INTO `jobapply` (`jobApplyId`, `jobId`, `name`, `email`, `type`, `resumePath`, `resumeName`, `coverLetter`) VALUES
+(1, 2, 'Anshul', 'ans@ans.com', 'ans', 'company/resume', 'resume', 'dajdkdkcdlsmncs');
 
 -- --------------------------------------------------------
 
@@ -336,7 +363,7 @@ INSERT INTO `jobapply` (`jobApplyId`, `name`, `email`, `type`, `resumePath`, `re
 
 CREATE TABLE IF NOT EXISTS `resume` (
   `resumeid` int(10) NOT NULL AUTO_INCREMENT,
-  `name` varchar(50) NOT NULL,
+  `name` varchar(100) NOT NULL,
   `image` blob NOT NULL,
   `college` varchar(50) NOT NULL,
   `company` varchar(50) NOT NULL,
@@ -345,13 +372,13 @@ CREATE TABLE IF NOT EXISTS `resume` (
   `degree` varchar(30) DEFAULT NULL,
   `email` varchar(30) DEFAULT NULL,
   `phone` int(13) DEFAULT NULL,
-  `address` varchar(30) DEFAULT NULL,
-  `aboutme` varchar(30) DEFAULT NULL,
-  `linkedin` varchar(30) DEFAULT NULL,
-  `facebook` varchar(30) DEFAULT NULL,
-  `twitter` varchar(30) DEFAULT NULL,
+  `address` varchar(500) DEFAULT NULL,
+  `aboutme` varchar(1000) DEFAULT NULL,
+  `linkedin` varchar(300) DEFAULT NULL,
+  `facebook` varchar(300) DEFAULT NULL,
+  `twitter` varchar(300) DEFAULT NULL,
   PRIMARY KEY (`resumeid`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
 
 --
 -- Dumping data for table `resume`
@@ -359,7 +386,7 @@ CREATE TABLE IF NOT EXISTS `resume` (
 
 INSERT INTO `resume` (`resumeid`, `name`, `image`, `college`, `company`, `post`, `numberofcompany`, `degree`, `email`, `phone`, `address`, `aboutme`, `linkedin`, `facebook`, `twitter`) VALUES
 (1, 'vaibhav', '', 'kasjdfk', 'KASLDFMLKA', 'Webdeveloper', 1, NULL, '', 0, '', '', '', '', ''),
-(2, 'abhijeet', '', '', '', 'ans', 1, 'highschool', 'asn@as.s', 545, 'asdasd', 'asddsasd', 'saasdas.x', 'asdsda.x', 'asdads.x');
+(4, 'yaishavi', '', '', '', 'jhkj', 1, 'highschool', NULL, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -373,15 +400,7 @@ CREATE TABLE IF NOT EXISTS `skills` (
   `skill` varchar(30) DEFAULT NULL,
   `level` int(11) NOT NULL,
   PRIMARY KEY (`serialno`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `skills`
---
-
-INSERT INTO `skills` (`serialno`, `resumeid`, `skill`, `level`) VALUES
-(9, 2, 'php', 80),
-(10, 2, 'html', 50);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -390,7 +409,7 @@ INSERT INTO `skills` (`serialno`, `resumeid`, `skill`, `level`) VALUES
 --
 
 CREATE TABLE IF NOT EXISTS `user` (
-  `userId` int(20) NOT NULL AUTO_INCREMENT,
+  `userId` bigint(20) NOT NULL AUTO_INCREMENT,
   `type` varchar(15) NOT NULL,
   `username` varchar(100) NOT NULL,
   `emailId` varchar(100) NOT NULL,
@@ -401,20 +420,22 @@ CREATE TABLE IF NOT EXISTS `user` (
   `profilePhotoPath` varchar(500) NOT NULL,
   `profilePhotoName` varchar(100) NOT NULL,
   PRIMARY KEY (`userId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
 
 --
 -- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`userId`, `type`, `username`, `emailId`, `password`, `salt`, `verifyId`, `status`, `profilePhotoPath`, `profilePhotoName`) VALUES
-(4, '', 'Yashasvi', 'yash@gmail.com', 'yash', 'b6dd4f3a45e1093044a705c29256bd77', '24c653b3fc1f81ca8dba35d31b0347a2', 2, '', ''),
-(5, '', 'Yash', 'yashasvigoel006@gmail.com', 'yash', '4a9347d83b01b846686683bc5f9c12de', 'e3a06d0af53634dc600aa061a7174dac', 2, '', ''),
+(4, 'jobSeeker', 'Yashasvi', 'yash@gmail.com', 'yash', 'b6dd4f3a45e1093044a705c29256bd77', '24c653b3fc1f81ca8dba35d31b0347a2', 3, '', ''),
+(5, 'company', 'Yash', 'yashasvigoel006@gmail.com', 'yash', '4a9347d83b01b846686683bc5f9c12de', 'e3a06d0af53634dc600aa061a7174dac', 2, '', ''),
 (6, 'jobSeeker', 'anshul', 'anshul@gmail.com', 'anshul', '3d6d87ce77ea6f8356f7b708381355d2', '8d3a3d9c35a526c91a4ebc38df9ffdcd', 2, '', ''),
 (7, 'company', 'ans', 'ans@ssa.c', 'ans', 'd7229a03f569f89e505875e4454edb23', '232afb54d49511ecbe313fd9c6d80b33', 2, '', ''),
 (8, 'company', 'ans', 'ans@ss.c', 'ans', '272b23f14db1516d141ae2d016841887', '48e314ca9913441a9464558fd5fdb84f', 2, '', ''),
 (9, 'company', 'ans', 'ans@s.c', 'ans', '76f87e3b9ee762bcc4506603ee677c0d', '5ac7d11ffb21f3eaad34dd2ff31a6d8f', 2, '', ''),
-(10, 'jobSeeker', 'ans', 'ans@s.cs', 'ans', '476ff2ca07c8a4e9bd30b2d23434cc1d', 'f80ca2c96d181775dab7765625a897fd', 2, '', '');
+(10, 'jobSeeker', 'ans', 'ans@s.cs', 'ans', '476ff2ca07c8a4e9bd30b2d23434cc1d', 'f80ca2c96d181775dab7765625a897fd', 2, '', ''),
+(11, 'jobSeeker', 'sadsad', 'sdsa@asd.c', 'ans', '9ad7de50ea4e3acd4694d354dd8626e9', '97907a419d4b363daa7c89585073727f', 2, '', ''),
+(12, 'jobSeeker', 'anshul', 'ans@ans.com', 'ans', 'c815b5643a55e91e459f6188b76a463c', '03a92195b3e67588e9d09899a9147b79', 2, '', '');
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

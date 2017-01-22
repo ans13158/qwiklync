@@ -40,6 +40,14 @@
 								</ul>
 							</li>
 							
+							<li class="has_sub"> <a href="javascript:void(0);" class="waves-effect"><i class="ion-person-stalker"></i><span> Job-seekers </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
+								<ul class="list-unstyled">
+									<li><a href="../admin/viewJobSeekers.php">View All Job-seekers</a></li>
+									<li><a href="../admin/deleteJobSeekers.php">Delete Job-seekers</a></li>
+									
+								</ul>
+							</li>
+							
 							<li class="has_sub"> <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-archive"></i><span> Company </span> <span class="pull-right"><i class="mdi mdi-plus"></i></span></a>
 								<!--<ul class="list-unstyled">
 									

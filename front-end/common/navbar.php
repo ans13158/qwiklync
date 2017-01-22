@@ -1,3 +1,15 @@
+
+ <?php
+ $logout = "";
+    if(isset($_SESSION['userId']) && isset($_SESSION['userType']) && isset($_SESSION['username'] ) ){
+        $logout = "LOG OUT";
+        $link = "logOut.php";
+    }
+    else{
+        $logout = "LOG IN";
+        $link = "login.php";
+    }
+ ?>
 <body>
     <div class="page">
         <div id="spinner">
@@ -26,11 +38,7 @@
         <nav id="menu-1" class="mega-menu fa-change-black" data-color="" >
             <section class="menu-list-items container-fluid" style="background-color: #29aafe" >
                 <div class="container" >
-                   <!-- <ul class="menu-logo">
-                        <li>
-                            <a href="index.php"> <img src="images/logo.png" alt="logo" class="img-responsive"> </a>
-                        </li>
-                    </ul>-->
+                   
                     <ul class="menu-links pull-right"  >
                         <li> <a href="index.php"> HOME </a>
                         </li>
@@ -42,10 +50,9 @@
                         </li>
                         <li> <a href="contactus.php"> CONTACT US </a>
                         </li>
-                            
-                           
+           
                         <li class="login-btn-no-bg"><a href="post-job.php" class="p-job" ><i class="fa fa-plus-square"></i> POST A JOB</a></li>
-                        <li class="login-btn-no-bg"><a href="login.php" class="p-job" ><i class="fa fa-sign-in"></i> GET STARTED</a></li> 
+                        <li class="login-btn-no-bg"><a href=<?php echo $link ?> class="p-job" ><i class="fa fa-sign-in"></i> <?php echo $logout; ?></a></li> 
                     </ul>
                 </div>
             </section>
